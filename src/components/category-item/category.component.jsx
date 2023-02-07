@@ -1,3 +1,4 @@
+// import { Link } from "react-router-dom";
 import "./category.styles.scss";
 const CategoryItem = ({ category }) => {
   const { title, imageUrl } = category;
