@@ -1,11 +1,12 @@
-import { Fragment } from "react";
-import { Outlet, Link } from "react-router-dom";
-import React from "react";
-import { ReactComponent as CrownLogo } from "./crown.svg";
-import "./navigation.styles.scss";
-const Navgiagtion = () => {
+import React, { Fragment } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import { ReactComponent as CrownLogo } from './crown.svg';
+import Footer from '../Footer/footer.component';
+import './navigation.styles.scss';
+
+function Navgiagtion() {
   return (
-    <Fragment>
+    <>
       <header className="navigation">
         <Link className="logo-container" to="/">
           <CrownLogo className="logo" />
@@ -15,11 +16,15 @@ const Navgiagtion = () => {
             <Link className="nav-link" to="/shop">
               SHOP
             </Link>
+            <Link className="nav-link" to="/sign-in">
+              SIGN IN
+            </Link>
           </div>
         </nav>
       </header>
       <Outlet />
-    </Fragment>
+      <Footer />
+    </>
   );
-};
+}
 export default Navgiagtion;
