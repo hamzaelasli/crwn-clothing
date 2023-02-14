@@ -3,7 +3,7 @@ import { Route, Routes /* useParams */ } from 'react-router-dom';
 import React from 'react';
 import Home from './routes/home/home.component';
 import Navgiagtion from './routes/navigation/navigation.component';
-import SignIn from './routes/sign-in/sign-in.component';
+import Authentication from './routes/authentication/authentication.component';
 
 function Shop() {
   return <p>I am a shop page</p>;
@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<Navgiagtion />}>
         <Route path="" element={<Home />} />
         <Route path="shop" element={<Shop />} />
-        <Route path="sign-in" element={<SignIn />} />
+        <Route path="auth" element={<Authentication />} />
       </Route>
     </Routes>
   );

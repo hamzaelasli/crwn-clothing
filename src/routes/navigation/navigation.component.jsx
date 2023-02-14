@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { ReactComponent as CrownLogo } from './crown.svg';
-import Footer from '../Footer/footer.component';
 import './navigation.styles.scss';
 
 function Navgiagtion() {
@@ -16,14 +15,13 @@ function Navgiagtion() {
             <Link className="nav-link" to="/shop">
               SHOP
             </Link>
-            <Link className="nav-link" to="/sign-in">
+            <Link className="nav-link" to="/auth">
               SIGN IN
             </Link>
           </div>
         </nav>
       </header>
       <Outlet />
-      <Footer />
     </>
   );
 }
