@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import { Route, Routes /* useParams */ } from 'react-router-dom';
 // import Categories from "./components/categories/categories.component";
 import React from 'react';

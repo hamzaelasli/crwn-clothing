@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import FormInput from '../form-input/form-input.component';
-import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
+import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils';
 import Button from '../button/button.component';
 import './sign-in-form.styles.scss';
 
@@ -14,16 +15,13 @@ function SignInForm() {
     setFormFields(defaultFormFields);
   };
   const signInWithGooogle = async () => {
-    const { user } = await signInWithGooglePopup();
-
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
   const { email, password } = fromFields;
   const signInWithEmail = async (e) => {
     e.preventDefault();
     try {
       const user = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(user);
       resetFormFields();
     } catch (error) {
       switch (error.code) {
