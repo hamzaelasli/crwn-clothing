@@ -5,10 +5,7 @@ import React from 'react';
 import Home from './routes/home/home.component';
 import Navgiagtion from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication.component';
-
-function Shop() {
-  return <p>I am a shop page</p>;
-}
+import Shop from './routes/shop/shop.compoonent';
 
 function App() {
   return (

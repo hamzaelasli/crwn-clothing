@@ -2,13 +2,18 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { ReactComponent as CrownLogo } from './crown.svg';
+import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
 import './navigation.styles.scss';
 import { UserContext } from '../../context/user.context';
+import { CartContext } from '../../context/cart.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
+import CardIcon from '../../components/card-icon/card-icon.component';
+import CardDropDown from '../../components/card-dropdown/card-dropdown.component';
 
 function Navgiagtion() {
   const { currentUser } = useContext(UserContext);
+  // console.log(toggle);
+  const { isCartOpen } = useContext(CartContext);
   return (
     <>
       <header className="navigation">
@@ -29,7 +34,9 @@ function Navgiagtion() {
                   </Link>
                 )
             }
+            <CardIcon />
           </div>
+          {isCartOpen && <CardDropDown />}
         </nav>
       </header>
       <Outlet />
